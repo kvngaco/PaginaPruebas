@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeading } from "@/components/shared/section-heading";
+import { AnimatedBlobs } from "@/components/shared/animated-blobs";
 import { quoteCategories } from "@/content/pricing";
 import { siteConfig } from "@/lib/site-config";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
@@ -13,8 +14,9 @@ import { cn } from "@/lib/utils";
 
 export function PricingTiers() {
   return (
-    <section id="planes" className="section-y bg-muted/30 border-y border-border">
-      <div className="container-page">
+    <section id="planes" className="section-y relative overflow-hidden bg-muted/30 border-y border-border">
+      <AnimatedBlobs variant="accent" intensity="subtle" />
+      <div className="container-page relative">
         <SectionHeading
           eyebrow="Cotizá tu solución"
           title="Elegí el ritmo que tu empresa necesita."
@@ -48,14 +50,16 @@ export function PricingTiers() {
                   ) : null}
 
                   <CardContent className="flex-1 flex flex-col gap-5 p-6">
-                    <span
+                    <motion.span
+                      whileHover={{ rotate: -6, scale: 1.06 }}
+                      transition={{ type: "spring", stiffness: 280, damping: 18 }}
                       className={cn(
-                        "grid place-items-center size-12 rounded-xl text-white",
+                        "grid place-items-center size-12 rounded-xl text-white shadow-md",
                         cat.highlighted ? "gradient-brand" : "bg-primary",
                       )}
                     >
                       <Icon className="size-6" />
-                    </span>
+                    </motion.span>
 
                     <div>
                       <h3 className="text-xl font-heading font-bold">{cat.name}</h3>

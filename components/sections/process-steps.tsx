@@ -1,11 +1,12 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { processSteps } from "@/content/process";
 
 export function ProcessSteps() {
+  const reduceMotion = useReducedMotion() ?? false;
   return (
     <section id="proceso" className="section-y bg-muted/30 border-y border-border">
       <div className="container-page">
@@ -18,8 +19,17 @@ export function ProcessSteps() {
         <div className="mt-14 relative">
           <div
             aria-hidden
-            className="hidden lg:block absolute top-7 left-[calc(12.5%+1rem)] right-[calc(12.5%+1rem)] h-px bg-border"
+            className="hidden lg:block absolute top-7 left-[calc(12.5%+1rem)] right-[calc(12.5%+1rem)] h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent"
           />
+          {!reduceMotion && (
+            <motion.div
+              aria-hidden
+              className="hidden lg:block absolute top-[calc(1.75rem-3px)] size-1.5 rounded-full bg-primary shadow-[0_0_12px_var(--primary)]"
+              initial={{ left: "calc(12.5% + 1rem)" }}
+              animate={{ left: ["calc(12.5% + 1rem)", "calc(87.5% - 1rem)"] }}
+              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+            />
+          )}
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((step, i) => {
               const Icon = step.icon;
@@ -33,9 +43,13 @@ export function ProcessSteps() {
                   className="relative flex flex-col items-center text-center"
                 >
                   <div className="relative">
-                    <div className="grid place-items-center size-14 rounded-full bg-card border-2 border-primary/20 shadow-card">
+                    <motion.div
+                      whileHover={reduceMotion ? undefined : { scale: 1.08, rotate: -5 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 18 }}
+                      className="grid place-items-center size-14 rounded-full bg-card border-2 border-primary/30 shadow-card"
+                    >
                       <Icon className="size-6 text-primary" />
-                    </div>
+                    </motion.div>
                     <span className="absolute -top-2 -right-2 grid place-items-center size-6 rounded-full bg-accent text-accent-foreground text-xs font-bold">
                       {step.number}
                     </span>

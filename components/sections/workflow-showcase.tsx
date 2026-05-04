@@ -5,6 +5,7 @@ import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { WhatsAppButton } from "@/components/shared/whatsapp-button";
+import { AnimatedBlobs } from "@/components/shared/animated-blobs";
 import { workflows, type FlowNode, type Workflow } from "@/content/workflows";
 import { cn } from "@/lib/utils";
 
@@ -19,10 +20,7 @@ export function WorkflowShowcase() {
         aria-hidden
         className="absolute inset-0 -z-10 bg-grid-dots opacity-50 mask-fade-edges"
       />
-      <div
-        aria-hidden
-        className="absolute inset-0 -z-10 bg-[radial-gradient(80%_60%_at_50%_0%,color-mix(in_oklch,var(--secondary)_12%,transparent),transparent_70%)]"
-      />
+      <AnimatedBlobs variant="secondary" intensity="subtle" />
 
       <div className="container-page">
         <SectionHeading
