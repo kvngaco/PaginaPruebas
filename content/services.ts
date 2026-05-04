@@ -23,11 +23,11 @@ export const services: Service[] = [
     description:
       "Conectamos sistemas y dejamos que la tecnología trabaje por vos. Automatización por voz, asistentes virtuales por WhatsApp, facturación electrónica end-to-end y procesamiento avanzado de grandes volúmenes de datos. Operaciones que antes tomaban horas, ahora corren solas.",
     bullets: [
-      "Automatización por voz: llamadas que agendan, informan y transfieren solas",
-      "Asistentes virtuales y chatbots inteligentes para WhatsApp y web",
       "Procesamiento masivo de datos (Excel, bases de datos, APIs) con dashboards en vivo",
-      "Integraciones entre CRM, contabilidad, e-commerce, nube y herramientas internas",
+      "Automatización contable y facturación masiva: conciliación, asientos y cierres auditables",
+      "Integraciones empresariales entre CRM, ERP, contabilidad, e-commerce y nube",
       "Workflows visuales tipo n8n / Make / Zapier desplegados a medida",
+      "Asistentes virtuales y chatbots inteligentes para WhatsApp y web",
     ],
     testimonial: {
       quote: "Recuperamos más de 20 horas semanales de trabajo manual.",
