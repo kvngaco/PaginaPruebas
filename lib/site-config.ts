@@ -4,7 +4,7 @@ export const siteConfig = {
   tagline: "Hacemos fácil la tecnología.",
   description:
     "Servicios de TI en Costa Rica: soporte técnico, infraestructura, desarrollo web y automatización para personas, profesionales y pymes. Diagnóstico gratuito.",
-  url: "https://easytechservices.cr",
+  url: "https://easytechservices.net",
   ogImage: "/og/cover.png",
 
   contact: {
