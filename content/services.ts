@@ -1,7 +1,7 @@
 import type { LucideIcon } from "lucide-react";
-import { Bot, LifeBuoy, MonitorSmartphone, Network } from "lucide-react";
+import { Bot, MonitorSmartphone, ShieldCheck } from "lucide-react";
 
-export type ServiceId = "soporte" | "automatizacion" | "web" | "infraestructura";
+export type ServiceId = "automatizacion" | "web" | "soporte";
 
 export interface Service {
   id: ServiceId;
@@ -16,40 +16,22 @@ export interface Service {
 
 export const services: Service[] = [
   {
-    id: "soporte",
-    icon: LifeBuoy,
-    title: "Soporte Técnico",
-    benefit: "Tu operación funcionando, siempre.",
-    description:
-      "Soporte presencial y remoto en toda América. Diagnóstico, reparación, mantenimiento preventivo y respuesta a emergencias para personas, profesionales y empresas.",
-    bullets: [
-      "Reparación de equipos, periféricos e impresoras",
-      "Mantenimiento preventivo programado",
-      "Recuperación de datos y limpieza de amenazas",
-    ],
-    testimonial: {
-      quote: "En 2 horas tenían todo funcionando.",
-      author: "Oficina contable, San José",
-    },
-    whatsappContext:
-      "Hola, vengo de su sitio. Necesito soporte técnico, ¿pueden contarme más?",
-  },
-  {
     id: "automatizacion",
     icon: Bot,
     title: "Automatización y Soluciones Digitales",
     benefit: "Procesos modernos. Tiempo recuperado.",
     description:
-      "Conectamos sistemas, automatizamos flujos y dejamos que la tecnología trabaje por vos. Chatbots inteligentes, integraciones entre plataformas, facturación electrónica automática y orquestación de procesos de punta a punta — con las herramientas más modernas del mercado.",
+      "Conectamos sistemas y dejamos que la tecnología trabaje por vos. Automatización por voz, asistentes virtuales por WhatsApp, facturación electrónica end-to-end y procesamiento avanzado de grandes volúmenes de datos. Operaciones que antes tomaban horas, ahora corren solas.",
     bullets: [
-      "Chatbots inteligentes y asistentes virtuales para WhatsApp y web",
-      "Integraciones entre CRM, contabilidad, e-commerce y nube",
-      "Automatización de reportes, facturación electrónica y notificaciones",
+      "Automatización por voz: llamadas que agendan, informan y transfieren solas",
+      "Asistentes virtuales y chatbots inteligentes para WhatsApp y web",
+      "Procesamiento masivo de datos (Excel, bases de datos, APIs) con dashboards en vivo",
+      "Integraciones entre CRM, contabilidad, e-commerce, nube y herramientas internas",
       "Workflows visuales tipo n8n / Make / Zapier desplegados a medida",
     ],
     testimonial: {
-      quote: "Ahorramos 20 horas semanales en tareas repetitivas.",
-      author: "Distribuidora, Alajuela",
+      quote: "Recuperamos más de 20 horas semanales de trabajo manual.",
+      author: "Distribuidora regional, Centroamérica",
     },
     whatsappContext:
       "Hola, vengo de su sitio. Quiero conversar sobre automatización y soluciones digitales.",
@@ -58,39 +40,40 @@ export const services: Service[] = [
     id: "web",
     icon: MonitorSmartphone,
     title: "Desarrollo Web y Aplicaciones",
-    benefit: "Producto digital que vende y escala.",
+    benefit: "Producto digital que escala con tu negocio.",
     description:
-      "Sitios corporativos, e-commerce, landings, portales internos y aplicaciones web/móviles. Tecnología moderna, optimizada para conversión, SEO y experiencia de usuario.",
+      "Sitios corporativos, e-commerce, portales internos y aplicaciones web/móviles a medida. Performance, SEO, conversión y experiencia de usuario en cada decisión de diseño.",
     bullets: [
       "Sitios corporativos y landings de alta conversión",
-      "Tiendas en línea con pasarelas locales (SINPE, BAC, BCR, internacionales)",
+      "Tiendas en línea con pasarelas locales e internacionales",
       "Aplicaciones web y móviles a medida (PWA, iOS, Android)",
       "Portales internos, intranets y dashboards de gestión",
     ],
     testimonial: {
-      quote: "Triplicamos consultas en 3 meses.",
-      author: "Pyme de servicios legales, San José",
+      quote: "Triplicamos consultas en 3 meses. La nueva web vende sola.",
+      author: "Pyme de servicios profesionales",
     },
     whatsappContext:
       "Hola, vengo de su sitio. Tengo consulta sobre desarrollo web o aplicaciones.",
   },
   {
-    id: "infraestructura",
-    icon: Network,
-    title: "Infraestructura y Redes",
-    benefit: "Conectividad sin caídas.",
+    id: "soporte",
+    icon: ShieldCheck,
+    title: "Soporte Técnico Especializado",
+    benefit: "Tu infraestructura, asegurada.",
     description:
-      "Diseñamos, instalamos y mantenemos la red que tu empresa necesita: cableado certificado, servidores, nube, respaldos automáticos y seguridad perimetral.",
+      "Soporte de nivel medio-alto orientado a infraestructura crítica: redes empresariales, servidores, ciberseguridad y análisis técnico. Cubrimos remoto a toda América y presencial en GAM Costa Rica.",
     bullets: [
-      "Cableado estructurado certificado",
-      "Servidores físicos, NAS y nube híbrida con respaldo automático",
-      "Configuración de firewalls, VPN y seguridad de red",
+      "Redes empresariales: diseño, instalación y monitoreo",
+      "Servidores físicos, NAS y nube híbrida con respaldos automáticos",
+      "Ciberseguridad: firewalls, VPN, limpieza de amenazas avanzada",
+      "Análisis técnico, auditorías y recuperación de datos",
     ],
     testimonial: {
-      quote: "Pasamos de caídas semanales a cero en un mes.",
-      author: "Clínica privada, Heredia",
+      quote: "Pasamos de caídas semanales a operación estable en menos de un mes.",
+      author: "Clínica privada, Costa Rica",
     },
     whatsappContext:
-      "Hola, vengo de su sitio. Tengo consulta sobre infraestructura y redes.",
+      "Hola, vengo de su sitio. Necesito soporte técnico especializado (redes, servidores o seguridad).",
   },
 ];

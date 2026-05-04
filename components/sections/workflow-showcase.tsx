@@ -14,10 +14,14 @@ export function WorkflowShowcase() {
   const active = workflows.find((w) => w.id === activeId) ?? workflows[0]!;
 
   return (
-    <section className="section-y relative overflow-hidden border-y border-border bg-background">
+    <section className="section-y relative overflow-hidden border-y border-border bg-foreground/[0.02] dark:bg-background">
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-[radial-gradient(80%_60%_at_50%_0%,color-mix(in_oklch,var(--secondary)_10%,transparent),transparent_70%)]"
+        className="absolute inset-0 -z-10 bg-grid-dots opacity-50 mask-fade-edges"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 bg-[radial-gradient(80%_60%_at_50%_0%,color-mix(in_oklch,var(--secondary)_12%,transparent),transparent_70%)]"
       />
 
       <div className="container-page">

@@ -9,15 +9,19 @@ import { services } from "@/content/services";
 
 export function ServicesGrid() {
   return (
-    <section id="servicios" className="section-y">
-      <div className="container-page">
+    <section id="servicios" className="section-y relative overflow-hidden">
+      <div
+        aria-hidden
+        className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent"
+      />
+      <div className="container-page relative">
         <SectionHeading
           eyebrow="Lo que hacemos"
-          title="Una sola promesa: una solución que no detenga a tu empresa."
-          subtitle="Cuatro líneas de servicio bajo un mismo equipo. Desde el soporte del día a día hasta automatizar procesos completos. Lo conectamos todo."
+          title="Soluciones que no detienen tu empresa."
+          subtitle="Tres líneas de servicio bajo un mismo equipo. Automatizamos lo repetitivo, construimos lo digital y aseguramos lo crítico."
         />
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
+        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => {
             const Icon = service.icon;
             return (

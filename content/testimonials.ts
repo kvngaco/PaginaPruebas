@@ -20,8 +20,8 @@ export const testimonials: Testimonial[] = [
     quote:
       "Llevábamos años con problemas de red que nadie resolvía. EasyTech vino, hizo un diagnóstico honesto, y en dos semanas teníamos todo estable. Lo mejor: nos explicaron en palabras que entendemos.",
     metric: "−90% caídas de red",
-    serviceId: "infraestructura",
-    serviceLabel: "Infraestructura y Redes",
+    serviceId: "soporte",
+    serviceLabel: "Soporte Especializado",
   },
   {
     initials: "CJ",

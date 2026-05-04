@@ -10,8 +10,12 @@ import { testimonials } from "@/content/testimonials";
 
 export function Testimonials() {
   return (
-    <section id="casos" className="section-y">
-      <div className="container-page">
+    <section id="casos" className="section-y relative overflow-hidden bg-accent/[0.03]">
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_85%_20%,color-mix(in_oklch,var(--accent)_10%,transparent),transparent_60%)]"
+      />
+      <div className="container-page relative">
         <SectionHeading
           eyebrow="Lo que dicen nuestros clientes"
           title="Resultados reales, en español, sin maquillaje."

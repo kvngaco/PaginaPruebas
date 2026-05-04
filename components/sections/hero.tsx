@@ -27,6 +27,10 @@ export function Hero() {
       />
       <div
         aria-hidden
+        className="absolute inset-0 -z-10 bg-grid-dots opacity-40 mask-fade-edges"
+      />
+      <div
+        aria-hidden
         className="absolute -top-40 -right-40 size-[480px] rounded-full bg-secondary/15 blur-3xl -z-10"
       />
       <div
