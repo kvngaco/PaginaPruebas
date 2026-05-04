@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/hero";
 import { TrustBar } from "@/components/sections/trust-bar";
 import { ServicesGrid } from "@/components/sections/services-grid";
+import { WorkflowShowcase } from "@/components/sections/workflow-showcase";
 import { ProcessSteps } from "@/components/sections/process-steps";
 import { Testimonials } from "@/components/sections/testimonials";
 import { Guarantee } from "@/components/sections/guarantee";
@@ -15,6 +16,7 @@ export default function HomePage() {
       <Hero />
       <TrustBar />
       <ServicesGrid />
+      <WorkflowShowcase />
       <ProcessSteps />
       <Testimonials />
       <Guarantee />

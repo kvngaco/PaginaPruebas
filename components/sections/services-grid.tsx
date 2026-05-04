@@ -13,8 +13,8 @@ export function ServicesGrid() {
       <div className="container-page">
         <SectionHeading
           eyebrow="Lo que hacemos"
-          title="Cuatro líneas de servicio. Una sola promesa: que la tecnología no te detenga."
-          subtitle="Desde reparar tu equipo hasta automatizar procesos completos de tu negocio. Cubrimos todo el ciclo."
+          title="Una sola promesa: una solución que no detenga a tu empresa."
+          subtitle="Cuatro líneas de servicio bajo un mismo equipo. Desde el soporte del día a día hasta automatizar procesos completos. Lo conectamos todo."
         />
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">
