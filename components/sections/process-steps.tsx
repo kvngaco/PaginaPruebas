@@ -1,0 +1,66 @@
+"use client";
+
+import { motion } from "motion/react";
+import { Button } from "@/components/ui/button";
+import { SectionHeading } from "@/components/shared/section-heading";
+import { processSteps } from "@/content/process";
+
+export function ProcessSteps() {
+  return (
+    <section id="proceso" className="section-y bg-muted/30 border-y border-border">
+      <div className="container-page">
+        <SectionHeading
+          eyebrow="Cómo trabajamos"
+          title="Cuatro pasos. Cero sorpresas."
+          subtitle="Trabajamos con un proceso claro y por escrito desde el primer día. Sabes qué pasa, cuándo pasa y cuánto cuesta."
+        />
+
+        <div className="mt-14 relative">
+          <div
+            aria-hidden
+            className="hidden lg:block absolute top-7 left-[calc(12.5%+1rem)] right-[calc(12.5%+1rem)] h-px bg-border"
+          />
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            {processSteps.map((step, i) => {
+              const Icon = step.icon;
+              return (
+                <motion.div
+                  key={step.number}
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  className="relative flex flex-col items-center text-center"
+                >
+                  <div className="relative">
+                    <div className="grid place-items-center size-14 rounded-full bg-card border-2 border-primary/20 shadow-card">
+                      <Icon className="size-6 text-primary" />
+                    </div>
+                    <span className="absolute -top-2 -right-2 grid place-items-center size-6 rounded-full bg-accent text-accent-foreground text-xs font-bold">
+                      {step.number}
+                    </span>
+                  </div>
+                  <h3 className="mt-5 text-lg font-heading font-semibold">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-muted-foreground text-pretty">
+                    {step.description}
+                  </p>
+                  <p className="mt-3 text-xs uppercase tracking-wider font-semibold text-primary">
+                    {step.duration}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="mt-12 text-center">
+          <Button asChild size="lg">
+            <a href="#contacto">Empezar con el diagnóstico gratuito</a>
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}
