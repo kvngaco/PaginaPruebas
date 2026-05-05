@@ -106,7 +106,7 @@ function HeroFlow({ reduceMotion }: { reduceMotion: boolean }) {
             <span className="size-1.5 rounded-full bg-success animate-pulse" />
             workflow.easytech
           </div>
-          <span className="inline-flex items-center gap-1 rounded-full bg-coral/15 px-2 py-0.5 text-[10px] font-semibold text-coral">
+          <span className="inline-flex items-center gap-1 rounded-full bg-tech/15 px-2 py-0.5 text-[10px] font-semibold text-tech">
             <Zap className="size-3" />
             En vivo
           </span>
@@ -149,7 +149,7 @@ function FlowConnections({ reduceMotion }: { reduceMotion: boolean }) {
     <svg
       aria-hidden
       viewBox="0 0 200 40"
-      className="mt-3 w-full h-10 text-coral/70"
+      className="mt-3 w-full h-10 text-tech/70"
       fill="none"
       stroke="currentColor"
       strokeWidth="2"

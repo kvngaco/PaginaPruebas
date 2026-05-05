@@ -124,10 +124,10 @@ const typeStyles: Record<FlowNode["type"], { ring: string; chip: string; chipTex
     dot: "bg-primary",
   },
   output: {
-    ring: "border-coral/60 bg-coral/[0.07]",
-    chip: "bg-coral/15",
-    chipText: "text-coral",
-    dot: "bg-coral",
+    ring: "border-tech/60 bg-tech/[0.07]",
+    chip: "bg-tech/15",
+    chipText: "text-tech",
+    dot: "bg-tech",
   },
 };
 
@@ -184,7 +184,7 @@ function Connector({ reduceMotion }: { reduceMotion: boolean }) {
     <svg
       aria-hidden
       viewBox="0 0 80 240"
-      className="w-24 h-60 text-coral"
+      className="w-24 h-60 text-tech"
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
