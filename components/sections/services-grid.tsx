@@ -56,18 +56,11 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
           isFirst && "border-primary/30 ring-1 ring-primary/10",
         )}
       >
-        {/* Animated top border line */}
+        {/* Animated top border line (CSS, GPU-composited) */}
         <div className="absolute inset-x-0 top-0 h-px overflow-hidden">
-          <motion.div
-            className="h-full w-1/3 bg-gradient-to-r from-transparent via-primary to-transparent"
-            initial={reduceMotion ? false : { x: "-100%" }}
-            animate={reduceMotion ? undefined : { x: "300%" }}
-            transition={{
-              duration: 3.2,
-              repeat: Infinity,
-              delay: index * 0.6,
-              ease: "easeInOut",
-            }}
+          <div
+            className="h-full w-1/3 bg-gradient-to-r from-transparent via-primary to-transparent animate-scanline"
+            style={{ animationDelay: `${index * 0.7}s` }}
           />
         </div>
 
@@ -146,7 +139,6 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
 }
 
 function FlowDots() {
-  const reduceMotion = useReducedMotion() ?? false;
   return (
     <div className="flex items-center justify-between gap-2 px-1 py-1">
       <span className="text-[10px] uppercase tracking-wider font-semibold text-muted-foreground">
@@ -154,20 +146,10 @@ function FlowDots() {
       </span>
       <div className="flex items-center gap-1.5">
         {[0, 1, 2, 3].map((i) => (
-          <motion.span
+          <span
             key={i}
-            className="size-1.5 rounded-full bg-success"
-            animate={
-              reduceMotion
-                ? undefined
-                : { opacity: [0.3, 1, 0.3], scale: [0.8, 1.2, 0.8] }
-            }
-            transition={{
-              duration: 1.6,
-              repeat: Infinity,
-              delay: i * 0.18,
-              ease: "easeInOut",
-            }}
+            className="size-1.5 rounded-full bg-success animate-pulse-soft"
+            style={{ animationDelay: `${i * 0.2}s` }}
           />
         ))}
       </div>

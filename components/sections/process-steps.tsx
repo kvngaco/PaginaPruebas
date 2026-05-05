@@ -21,15 +21,10 @@ export function ProcessSteps() {
             aria-hidden
             className="hidden lg:block absolute top-7 left-[calc(12.5%+1rem)] right-[calc(12.5%+1rem)] h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent"
           />
-          {!reduceMotion && (
-            <motion.div
-              aria-hidden
-              className="hidden lg:block absolute top-[calc(1.75rem-3px)] size-1.5 rounded-full bg-primary shadow-[0_0_12px_var(--primary)]"
-              initial={{ left: "calc(12.5% + 1rem)" }}
-              animate={{ left: ["calc(12.5% + 1rem)", "calc(87.5% - 1rem)"] }}
-              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-            />
-          )}
+          <div
+            aria-hidden
+            className="hidden lg:block absolute top-[calc(1.75rem-3px)] size-1.5 rounded-full bg-primary shadow-[0_0_12px_var(--primary)] animate-process-dot"
+          />
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((step, i) => {
               const Icon = step.icon;
