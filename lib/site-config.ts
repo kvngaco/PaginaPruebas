@@ -3,7 +3,7 @@ export const siteConfig = {
   legalName: "EasyTech Services S.A.",
   tagline: "Hacemos fácil la tecnología.",
   description:
-    "Servicios de TI en Costa Rica: soporte técnico, infraestructura, desarrollo web y automatización para personas, profesionales y pymes. Diagnóstico gratuito.",
+    "Servicios de TI en toda América: automatización avanzada, desarrollo web y aplicaciones, soporte técnico especializado e infraestructura. Consultoría inicial sin costo.",
   url: "https://easytechcr.net",
   ogImage: "/og/cover.png",
 

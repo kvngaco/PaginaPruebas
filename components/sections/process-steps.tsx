@@ -71,7 +71,7 @@ export function ProcessSteps() {
 
         <div className="mt-12 text-center">
           <Button asChild size="lg">
-            <a href="#contacto">Empezar con el diagnóstico gratuito</a>
+            <a href="#contacto">Solicitar consultoría</a>
           </Button>
         </div>
       </div>

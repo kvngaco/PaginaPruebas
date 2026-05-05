@@ -7,9 +7,9 @@ import { SectionHeading } from "@/components/shared/section-heading";
 const guarantees = [
   {
     icon: Gift,
-    title: "Diagnóstico siempre gratis",
+    title: "Consultoría inicial sin costo",
     description:
-      "La primera conversación, la visita inicial o la auditoría remota no tienen costo. Pagas solo si avanzas.",
+      "La primera conversación, evaluación o auditoría remota no tienen costo. Pagas solo si avanzas con la propuesta.",
   },
   {
     icon: FileCheck,

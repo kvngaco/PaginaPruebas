@@ -13,9 +13,9 @@ export const processSteps: ProcessStep[] = [
   {
     number: 1,
     icon: Search,
-    title: "Diagnóstico gratuito",
+    title: "Consultoría inicial",
     description:
-      "Conversamos por WhatsApp o videollamada. Entendemos tu situación, tus equipos y tus objetivos. Sin costo y sin compromiso.",
+      "Conversamos por WhatsApp o videollamada. Entendemos tu situación, tus objetivos y el alcance del proyecto. Sin costo y sin compromiso.",
     duration: "~30 minutos",
   },
   {
