@@ -39,7 +39,7 @@ export function PricingTiers() {
                 <Card
                   className={cn(
                     "h-full shadow-card flex flex-col relative overflow-hidden",
-                    cat.highlighted && "border-2 border-accent shadow-card-hover",
+                    cat.highlighted && "shadow-card-hover ring-2 ring-accent",
                   )}
                 >
                   {cat.badge ? (
