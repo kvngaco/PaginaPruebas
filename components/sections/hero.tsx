@@ -58,12 +58,12 @@ export function Hero() {
 
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <Button asChild size="lg" className="text-base">
-              <Link href="#contacto">Solicitar consultoría</Link>
+              <Link href="#contacto">Hablemos de tu proyecto</Link>
             </Button>
             <WhatsAppButton
               size="lg"
               label="Escribir por WhatsApp"
-              context="Hola, vi su sitio. Quiero solicitar una consultoría sobre sus servicios."
+              context="Hola, vi su sitio. Me gustaría conversar sobre un proyecto."
             />
           </div>
 

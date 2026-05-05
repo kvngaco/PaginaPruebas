@@ -50,7 +50,7 @@ export function FinalCta() {
             size="lg"
             className="bg-white text-primary hover:bg-white/90 text-base"
           >
-            <Link href="#contacto">Solicitar consultoría</Link>
+            <Link href="#contacto">Hablemos de tu proyecto</Link>
           </Button>
           <WhatsAppButton
             size="lg"
