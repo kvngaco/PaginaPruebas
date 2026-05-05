@@ -110,21 +110,24 @@ function FlowGraph({ workflow, reduceMotion }: { workflow: Workflow; reduceMotio
   );
 }
 
-const typeStyles: Record<FlowNode["type"], { ring: string; chip: string; chipText: string }> = {
+const typeStyles: Record<FlowNode["type"], { ring: string; chip: string; chipText: string; dot: string }> = {
   trigger: {
-    ring: "border-secondary/40 bg-secondary/5",
-    chip: "bg-secondary/15 text-secondary-foreground",
+    ring: "border-secondary/50 bg-secondary/[0.06]",
+    chip: "bg-secondary/15",
     chipText: "text-secondary",
+    dot: "bg-secondary",
   },
   process: {
-    ring: "border-primary/40 bg-primary/5",
+    ring: "border-primary/50 bg-primary/[0.06]",
     chip: "bg-primary/15",
     chipText: "text-primary",
+    dot: "bg-primary",
   },
   output: {
-    ring: "border-accent/40 bg-accent/5",
-    chip: "bg-accent/15",
-    chipText: "text-[oklch(0.45_0.15_60)] dark:text-accent",
+    ring: "border-coral/60 bg-coral/[0.07]",
+    chip: "bg-coral/15",
+    chipText: "text-coral",
+    dot: "bg-coral",
   },
 };
 
@@ -146,7 +149,7 @@ function FlowCard({
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.4, delay }}
       className={cn(
-        "group relative rounded-xl border bg-card p-3.5 flex items-center gap-3 shadow-sm hover:shadow-card transition-all",
+        "group relative rounded-xl border-2 glass-card p-3.5 flex items-center gap-3 shadow-sm hover:shadow-card transition-all",
         style.ring,
       )}
     >
@@ -157,10 +160,19 @@ function FlowCard({
         <p className="text-sm font-semibold truncate">{node.label}</p>
         <p className="text-xs text-muted-foreground truncate">{node.sublabel}</p>
       </div>
+      {/* Connection port (n8n-style) */}
+      <span
+        aria-hidden
+        className={cn(
+          "absolute top-1/2 -translate-y-1/2 size-3 rounded-full border-2 border-background",
+          node.type === "output" ? "-left-1.5" : "-right-1.5",
+          style.dot,
+        )}
+      />
       {!reduceMotion && (
-        <span className="absolute -top-1 -right-1 grid place-items-center">
-          <span className="size-2 rounded-full bg-success" />
-          <span className="absolute size-2 rounded-full bg-success animate-ping opacity-75" />
+        <span className="absolute -top-1.5 -right-1.5 grid place-items-center">
+          <span className={cn("size-2 rounded-full", style.dot)} />
+          <span className={cn("absolute size-2 rounded-full animate-ping opacity-75", style.dot)} />
         </span>
       )}
     </motion.div>
@@ -172,50 +184,50 @@ function Connector({ reduceMotion }: { reduceMotion: boolean }) {
     <svg
       aria-hidden
       viewBox="0 0 80 240"
-      className="w-20 h-60 text-primary/50"
+      className="w-24 h-60 text-coral"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.5"
+      strokeWidth="2"
       strokeLinecap="round"
     >
-      <path d="M5 40 Q 40 40 40 120 T 75 200" strokeDasharray="4 5" />
-      <path d="M5 120 L 75 120" strokeDasharray="4 5" />
-      <path d="M5 200 Q 40 200 40 120 T 75 40" strokeDasharray="4 5" />
+      <path d="M5 40 C 30 40 50 80 40 120 S 50 200 75 200" opacity="0.7" />
+      <path d="M5 120 C 30 120 50 120 75 120" opacity="0.7" />
+      <path d="M5 200 C 30 200 50 160 40 120 S 50 40 75 40" opacity="0.7" />
       {!reduceMotion && (
         <>
           <motion.circle
-            r="3"
+            r="3.5"
             fill="currentColor"
             stroke="none"
             initial={{ offsetDistance: "0%" }}
             animate={{ offsetDistance: "100%" }}
-            transition={{ duration: 2.2, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: "linear" }}
             style={{
-              offsetPath: "path('M5 40 Q 40 40 40 120 T 75 200')",
+              offsetPath: "path('M5 40 C 30 40 50 80 40 120 S 50 200 75 200')",
               offsetRotate: "auto",
             }}
           />
           <motion.circle
-            r="3"
+            r="3.5"
             fill="currentColor"
             stroke="none"
             initial={{ offsetDistance: "0%" }}
             animate={{ offsetDistance: "100%" }}
-            transition={{ duration: 2.2, repeat: Infinity, ease: "linear", delay: 0.5 }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: "linear", delay: 0.4 }}
             style={{
-              offsetPath: "path('M5 120 L 75 120')",
+              offsetPath: "path('M5 120 C 30 120 50 120 75 120')",
               offsetRotate: "auto",
             }}
           />
           <motion.circle
-            r="3"
+            r="3.5"
             fill="currentColor"
             stroke="none"
             initial={{ offsetDistance: "0%" }}
             animate={{ offsetDistance: "100%" }}
-            transition={{ duration: 2.2, repeat: Infinity, ease: "linear", delay: 1 }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: "linear", delay: 0.8 }}
             style={{
-              offsetPath: "path('M5 200 Q 40 200 40 120 T 75 40')",
+              offsetPath: "path('M5 200 C 30 200 50 160 40 120 S 50 40 75 40')",
               offsetRotate: "auto",
             }}
           />

@@ -100,13 +100,13 @@ function HeroFlow({ reduceMotion }: { reduceMotion: boolean }) {
         className="absolute inset-0 rounded-3xl gradient-brand opacity-15 blur-3xl"
       />
 
-      <div className="relative rounded-2xl border border-border bg-card/70 backdrop-blur-sm p-5 shadow-card">
+      <div className="relative rounded-2xl border border-border glass-card p-5 shadow-card">
         <div className="flex items-center justify-between mb-4">
-          <div className="inline-flex items-center gap-2 text-xs font-medium text-muted-foreground">
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-muted-foreground">
             <span className="size-1.5 rounded-full bg-success animate-pulse" />
-            Workflow EasyTech
+            workflow.easytech
           </div>
-          <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-semibold text-primary">
+          <span className="inline-flex items-center gap-1 rounded-full bg-coral/15 px-2 py-0.5 text-[10px] font-semibold text-coral">
             <Zap className="size-3" />
             En vivo
           </span>
@@ -149,27 +149,27 @@ function FlowConnections({ reduceMotion }: { reduceMotion: boolean }) {
     <svg
       aria-hidden
       viewBox="0 0 200 40"
-      className="mt-3 w-full h-10 text-primary/40"
+      className="mt-3 w-full h-10 text-coral/70"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.5"
+      strokeWidth="2"
       strokeLinecap="round"
     >
-      <path d="M20 20 Q60 5 100 20 T180 20" strokeDasharray="3 4" />
+      <path d="M20 20 C 60 5 100 35 140 20 S 180 5 180 20" />
       {!reduceMotion && (
         <motion.circle
-          r="3"
+          r="3.5"
           fill="currentColor"
           stroke="none"
           initial={{ offsetDistance: "0%" }}
           animate={{ offsetDistance: "100%" }}
           transition={{
-            duration: 2.4,
+            duration: 2,
             repeat: Infinity,
             ease: "linear",
           }}
           style={{
-            offsetPath: "path('M20 20 Q60 5 100 20 T180 20')",
+            offsetPath: "path('M20 20 C 60 5 100 35 140 20 S 180 5 180 20')",
             offsetRotate: "auto",
           }}
         />
