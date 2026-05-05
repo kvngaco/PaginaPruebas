@@ -25,7 +25,7 @@ export function ServicesGrid() {
           subtitle="Tres líneas de servicio bajo un mismo equipo. Automatizamos lo repetitivo, construimos lo digital y aseguramos lo crítico."
         />
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-stretch">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-stretch [&>*:last-child:nth-child(2n)]:sm:max-lg:col-span-2 [&>*:last-child:nth-child(2n)]:sm:max-lg:max-w-md [&>*:last-child:nth-child(2n)]:sm:max-lg:mx-auto">
           {services.map((service, i) => (
             <ServiceCard key={service.id} service={service} index={i} />
           ))}
@@ -51,13 +51,13 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
     >
       <Card
         className={cn(
-          "relative h-full overflow-hidden border-border shadow-card flex flex-col transition-all duration-300",
+          "relative h-full border-border shadow-card flex flex-col transition-all duration-300",
           "hover:shadow-card-hover hover:border-primary/40",
           isFirst && "border-primary/30 ring-1 ring-primary/10",
         )}
       >
         {/* Animated top border line (CSS, GPU-composited) */}
-        <div className="absolute inset-x-0 top-0 h-px overflow-hidden">
+        <div className="absolute inset-x-0 top-0 h-px overflow-hidden rounded-t-xl">
           <div
             className="h-full w-1/3 bg-gradient-to-r from-transparent via-primary to-transparent animate-scanline"
             style={{ animationDelay: `${index * 0.7}s` }}

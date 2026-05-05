@@ -36,10 +36,10 @@ export function WorkflowShowcase() {
               type="button"
               onClick={() => setActiveId(w.id)}
               className={cn(
-                "rounded-full border px-4 py-2 text-sm font-medium transition-all",
+                "rounded-full border-2 px-4 py-2 text-sm font-medium transition-all",
                 activeId === w.id
                   ? "border-primary bg-primary text-primary-foreground shadow-sm"
-                  : "border-border bg-card text-foreground/80 hover:border-primary/40",
+                  : "border-foreground/15 bg-card text-foreground/85 hover:border-primary/40 hover:text-foreground",
               )}
             >
               {w.title}
@@ -57,7 +57,7 @@ export function WorkflowShowcase() {
               transition={{ duration: 0.35 }}
               className="rounded-3xl border border-border bg-card/80 backdrop-blur-sm shadow-card p-6 sm:p-8 lg:p-10"
             >
-              <p className="text-base sm:text-lg text-foreground/80 max-w-3xl">
+              <p className="text-base sm:text-lg text-foreground/90 max-w-3xl">
                 <span className="font-semibold text-primary">{active.tagline}</span>{" "}
                 {active.description}
               </p>
@@ -92,6 +92,13 @@ function FlowGraph({ workflow, reduceMotion }: { workflow: Workflow; reduceMotio
         <Connector reduceMotion={reduceMotion} />
       </div>
 
+      <div
+        aria-hidden
+        className="lg:hidden flex items-center justify-center text-primary/60"
+      >
+        <ArrowRight className="size-5 rotate-90" />
+      </div>
+
       <div className="space-y-3">
         {workflow.outputs.map((node, i) => (
           <FlowCard
@@ -101,10 +108,6 @@ function FlowGraph({ workflow, reduceMotion }: { workflow: Workflow; reduceMotio
             reduceMotion={reduceMotion}
           />
         ))}
-      </div>
-
-      <div className="lg:hidden col-span-full flex items-center justify-center text-primary/60">
-        <ArrowRight className="size-5 rotate-90" />
       </div>
     </div>
   );
@@ -160,11 +163,11 @@ function FlowCard({
         <p className="text-sm font-semibold truncate">{node.label}</p>
         <p className="text-xs text-muted-foreground truncate">{node.sublabel}</p>
       </div>
-      {/* Connection port (n8n-style) */}
+      {/* Connection port (n8n-style, only on desktop) */}
       <span
         aria-hidden
         className={cn(
-          "absolute top-1/2 -translate-y-1/2 size-3 rounded-full border-2 border-background",
+          "hidden lg:block absolute top-1/2 -translate-y-1/2 size-3 rounded-full border-2 border-background",
           node.type === "output" ? "-left-1.5" : "-right-1.5",
           style.dot,
         )}

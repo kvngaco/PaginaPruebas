@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 
 export function PricingTiers() {
   return (
-    <section id="planes" className="section-y relative overflow-hidden bg-muted/30 border-y border-border">
+    <section id="planes" className="section-y relative overflow-x-hidden bg-muted/30 border-y border-border">
       <AnimatedBlobs variant="accent" intensity="subtle" />
       <div className="container-page relative">
         <SectionHeading
@@ -23,7 +23,7 @@ export function PricingTiers() {
           subtitle="Cuatro formas de trabajar con EasyTech. Cada propuesta se adapta a tu caso. Cotización sin costo, respuesta en menos de 1 hora hábil."
         />
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4 items-stretch">
+        <div className="mt-14 pt-4 grid gap-6 md:grid-cols-2 lg:grid-cols-4 items-stretch">
           {quoteCategories.map((cat, i) => {
             const Icon = cat.icon;
             const mailto = `mailto:${siteConfig.contact.email}?subject=${encodeURIComponent(cat.emailSubject)}`;
@@ -34,22 +34,27 @@ export function PricingTiers() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.45, delay: i * 0.06 }}
-                className={cn(cat.highlighted && "xl:-translate-y-3")}
+                className={cn(cat.highlighted && "lg:-translate-y-3")}
               >
                 <Card
                   className={cn(
-                    "h-full shadow-card flex flex-col relative",
+                    "h-full shadow-card flex flex-col relative overflow-hidden",
                     cat.highlighted && "border-2 border-accent shadow-card-hover",
                   )}
                 >
                   {cat.badge ? (
-                    <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground gap-1 px-3 py-1">
+                    <div className="absolute inset-x-0 top-0 z-10 rounded-t-xl bg-accent text-accent-foreground py-1.5 text-center text-xs font-semibold inline-flex items-center justify-center gap-1.5">
                       <Star className="size-3 fill-current" />
                       {cat.badge}
-                    </Badge>
+                    </div>
                   ) : null}
 
-                  <CardContent className="flex-1 flex flex-col gap-5 p-6">
+                  <CardContent
+                    className={cn(
+                      "flex-1 flex flex-col gap-5 p-6",
+                      cat.badge && "pt-12",
+                    )}
+                  >
                     <motion.span
                       whileHover={{ rotate: -6, scale: 1.06 }}
                       transition={{ type: "spring", stiffness: 280, damping: 18 }}

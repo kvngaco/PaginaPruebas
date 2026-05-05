@@ -86,6 +86,9 @@ export function ContactForm() {
               <Label htmlFor="contact">WhatsApp o email</Label>
               <Input
                 id="contact"
+                type="text"
+                inputMode="email"
+                autoComplete="email"
                 value={form.contact}
                 onChange={(e) => update("contact", e.target.value)}
                 placeholder="Para contactarte de vuelta"

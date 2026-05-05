@@ -94,7 +94,7 @@ export function Hero() {
 
 function HeroFlow({ reduceMotion }: { reduceMotion: boolean }) {
   return (
-    <div className="relative mx-auto max-w-sm sm:max-w-md">
+    <div className="relative mx-auto max-w-sm sm:max-w-md md:max-w-lg lg:max-w-md">
       <div
         aria-hidden
         className="absolute inset-0 rounded-3xl gradient-brand opacity-15 blur-3xl"

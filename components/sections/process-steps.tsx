@@ -45,7 +45,7 @@ export function ProcessSteps() {
                     >
                       <Icon className="size-6 text-primary" />
                     </motion.div>
-                    <span className="absolute -top-2 -right-2 grid place-items-center size-6 rounded-full bg-accent text-accent-foreground text-xs font-bold">
+                    <span className="absolute -top-2 -right-2 z-10 grid place-items-center size-6 rounded-full bg-accent text-accent-foreground text-xs font-bold">
                       {step.number}
                     </span>
                   </div>

@@ -102,7 +102,7 @@ export function ChatbotWidget() {
         aria-label={open ? "Cerrar chat" : "Abrir chat"}
         aria-expanded={open}
         className={cn(
-          "fixed bottom-5 right-5 z-50 grid place-items-center size-14 rounded-full text-white shadow-lg shadow-black/20 transition-transform hover:scale-105 active:scale-95",
+          "fixed bottom-5 right-5 z-50 grid place-items-center size-14 rounded-full text-white shadow-lg shadow-black/20 transition-transform hover:scale-105 active:scale-95 focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2",
           open ? "bg-foreground" : "gradient-brand",
         )}
       >
@@ -134,8 +134,8 @@ export function ChatbotWidget() {
               </div>
               <div className="flex-1">
                 <p className="font-semibold text-sm">Asistente EasyTech</p>
-                <p className="text-xs text-white/80 inline-flex items-center gap-1.5">
-                  <span className="size-1.5 rounded-full bg-success animate-pulse" />
+                <p className="text-xs text-white/95 inline-flex items-center gap-1.5">
+                  <span aria-hidden className="size-1.5 rounded-full bg-success animate-pulse" />
                   En línea · responde al instante
                 </p>
               </div>
