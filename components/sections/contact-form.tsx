@@ -49,6 +49,8 @@ export function ContactForm() {
     }
 
     setSubmitting(true);
+    // Marketing OS — envío exitoso del formulario de contacto/lead.
+    window.pulse?.track("form_submit", { form_id: "contact" });
     const context = `Hola, soy ${name}. ${message} (Contacto: ${contact})`;
     const link = buildWhatsAppLink(context);
     window.open(link, "_blank", "noopener,noreferrer");

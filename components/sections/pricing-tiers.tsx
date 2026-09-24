@@ -99,13 +99,25 @@ export function PricingTiers() {
                           href={buildWhatsAppLink(cat.whatsappContext)}
                           target="_blank"
                           rel="noopener noreferrer"
+                          data-pulse-event="quote_request"
+                          data-pulse-meta={JSON.stringify({
+                            service_slug: cat.id,
+                            channel: "whatsapp",
+                          })}
                         >
                           <MessageCircle className="size-4" />
                           Cotizar por WhatsApp
                         </a>
                       </Button>
                       <Button asChild size="sm" variant="ghost" className="w-full">
-                        <a href={mailto}>
+                        <a
+                          href={mailto}
+                          data-pulse-event="quote_request"
+                          data-pulse-meta={JSON.stringify({
+                            service_slug: cat.id,
+                            channel: "email",
+                          })}
+                        >
                           <Mail className="size-4" />
                           Cotizar por correo
                         </a>

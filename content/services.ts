@@ -59,21 +59,23 @@ export const services: Service[] = [
   {
     id: "soporte",
     icon: ShieldCheck,
-    title: "Soporte Técnico Especializado",
-    benefit: "Tu infraestructura, asegurada.",
+    title: "Soporte Técnico Integral",
+    benefit: "Una sola puerta para toda tu operación.",
     description:
-      "Soporte de nivel medio-alto orientado a infraestructura crítica: redes empresariales, servidores, ciberseguridad y análisis técnico. Cubrimos remoto a toda América y presencial en GAM Costa Rica.",
+      "Resolvemos cualquier incidente informático: equipos, servidores, virtualización, firma digital, dominios, correo y redes. Atención remota inmediata, asistencia por llamada y visita presencial cuando el caso lo amerita. Diagnóstico siempre gratuito.",
     bullets: [
-      "Redes empresariales: diseño, instalación y monitoreo",
-      "Servidores físicos, NAS y nube híbrida con respaldos automáticos",
-      "Ciberseguridad: firewalls, VPN, limpieza de amenazas avanzada",
-      "Análisis técnico, auditorías y recuperación de datos",
+      "Modalidades flexibles: remoto, telefónico o presencial (GAM Costa Rica)",
+      "Incidentes generales de PC, laptop, impresoras, correo y ofimática",
+      "Servidores físicos y virtuales (VMware, Hyper-V, Proxmox) con respaldos",
+      "Firma digital: instalación, drivers, errores BCCR/Hacienda y renovación",
+      "Dominios, DNS, hosting y migraciones de correo corporativo",
+      "Redes, WiFi empresarial, VPN y ciberseguridad",
     ],
     testimonial: {
-      quote: "Pasamos de caídas semanales a operación estable en menos de un mes.",
-      author: "Clínica privada, Costa Rica",
+      quote: "Una sola llamada y resuelven. Ya no peleo con varios proveedores.",
+      author: "Despacho contable, San José",
     },
     whatsappContext:
-      "Hola, vengo de su sitio. Necesito soporte técnico especializado (redes, servidores o seguridad).",
+      "Hola, vengo de su sitio. Necesito soporte técnico (incidente, servidor, firma digital, dominio u otro).",
   },
 ];
